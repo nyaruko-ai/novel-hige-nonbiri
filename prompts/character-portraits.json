@@ -1,0 +1,146 @@
+{
+  "spec": {
+    "globalPrompt": "Create a premium vertical watercolor character portrait for a Japanese mobile web novel. Use layered washes, soft edge control, luminous paper texture, and painterly detail while keeping face, silhouette, costume, and signature props readable. Do not render any visible text, typography, signage, caption, letters, runes, or title elements inside the image.",
+    "globalNegativePrompt": "text, typography, letters, words, caption, title, signage, logo, watermark, split panel, extra limbs, distorted anatomy, flat generic fantasy poster, photorealistic rendering, hard cel shading",
+    "fixedWidth": 1080,
+    "fixedHeight": 1920,
+    "outputDir": "project/assets/characters",
+    "defaultModel": "gemini-3.1-flash-image-preview"
+  },
+  "characters": [
+    {
+      "id": "sato",
+      "name": "サトー",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "サトー の縦長キャラクターポートレート。 役割は 主人公 / ヒゲ魔法で暮らしを切り開く開拓者。 外見の手掛かり: 四十歳。長い髪を後ろで束ね、立派なヒゲを持つ。戦うより生活の役に立つ形で力を使う。 サトーが顎に意識を向ける。 話し方の印象: 戦うよりこういう使い方のほうが好きなんだよ、俺は 関係性の中心には ニャル子、しろたま、セレスティア がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "nyaruko",
+      "name": "ニャル子",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "ニャル子 の縦長キャラクターポートレート。 役割は 相棒 / 猫耳メイドの生活設計役。 外見の手掛かり: 銀髪のボブカットで、琥珀色の目を持つ猫耳メイド。黒と白を基調にした上品なメイド服を着て、首元の金の鈴が印象的。感情が耳に出やすく、てきぱきと家事と段取りを回す。 隣で見ていたニャル子が、感心したように耳をぴこりと動かした。 話し方の印象: ご主人様のヒゲ、もはや便利道具箱ですにゃ 関係性の中心には サトー、しろたま がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift, do not remove the black-and-white maid outfit, and do not change silver bob hair or amber eyes",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "shirotama",
+      "name": "しろたま",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "しろたま の縦長キャラクターポートレート。 役割は 相棒 / 白いもふもふの感応役。 外見の手掛かり: 猫ではなく、顔と胴体が完全に一体になった白くてまん丸い毛玉のような小さな生き物。小さな耳とつぶらな黒い目と短い尻尾があり、手足は見えない。首輪や服や装飾品は付けず、異世界の遺跡や樹海にもなじむ神秘的な雰囲気を持つ。白いもふもふの体で丸くなって眠ることが多いが、樹海の異変には鋭く反応する。 その膝の上では、しろたまが丸くなっていた。白いもふもふの体を日向へ広げ、いかにも「動きたくない」と言いたげな顔をしている。 話し方の印象: モフ 関係性の中心には サトー、ニャル子 がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしな…",
+      "negativePrompt": "do not turn it into a cat, dog, fox, mascot, or realistic quadruped; no collar, no ribbon, no clothes, no accessories; preserve a single perfectly round fluffy body with the face embedded into the sphere, tiny ears, tiny tail, no visible limbs, and simple dark eyes; keep an otherworldly fantasy atmosphere",
+      "referenceImage": "草稿/shirotama.png",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "celestia",
+      "name": "セレスティア",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "セレスティア の縦長キャラクターポートレート。 役割は 王国側の窓口 / 真面目で現実的な調整役。 外見の手掛かり: 濃紺の外套をまとい、背筋を伸ばした隙のない佇まい。 「セレスティア・ルーンベルク様よりです。なるべく早くお目通り願いたいと」 話し方の印象: 「セレスティア・ルーンベルク様よりです。なるべく早くお目通り願いたいと」 関係性の中心には サトー、ニャル子、村長 がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "perick",
+      "name": "ペリック",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "ペリック の縦長キャラクターポートレート。 役割は 行商人 / 軽薄そうで土地勘のあるトリックスター。 外見の手掛かり: 荷車と一緒に騒がしく現れ、口が回る。 ペリックが目を丸くする。 話し方の印象: 「怪しいとは心外だねえ。俺は誠実さと相場観で生きてる行商人、ペリック・タンブルさ」 関係性の中心には サトー、ニャル子、バルド がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "baldo",
+      "name": "バルド",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "バルド の縦長キャラクターポートレート。 役割は 元補給官 / 工房と物流を整える実務家。 外見の手掛かり: 斧より帳面が得意で、工房と倉庫を仕切る現場の要。 バルドはそれを見て、さすがに少し目を見張った。 話し方の印象: 「この人、バルドって感じがするですにゃ」 関係性の中心には サトー、ミレナ、ハイル がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "milena",
+      "name": "ミレナ",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "ミレナ の縦長キャラクターポートレート。 役割は 治療師 / 土と生活改善を見る実務家。 外見の手掛かり: 診療だけでなく畑や保存食の整備まで視野に入れる。 ミレナはしろたまを見て、少しだけ目を細めた。 話し方の印象: 「ミレナ・フォス。ペリックの言い方は忘れて」 関係性の中心には サトー、バルド、ペリック がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "heil",
+      "name": "ハイル",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "ハイル の縦長キャラクターポートレート。 役割は 帝国工兵 / 橋や導流路を担う土木の専門家。 外見の手掛かり: 理屈が立ち、構造物と排水を実務で回す。 ハイルは少しだけ目を細める。 話し方の印象: 「帝国工兵局付監督官、ハイル・ベルク。ここを開いているのはサトー殿で間違いないか」 関係性の中心には サトー、バルド がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "yurna",
+      "name": "ユルナ",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "ユルナ の縦長キャラクターポートレート。 役割は 森辺の狩人 / 樹海の掟と古い語りを知る案内役。 外見の手掛かり: 樹海の境を知る静かな観察者。 ユルナはその反応を見て、少しだけ目を細めた。 話し方の印象: 「ユルナ・シェイド。森辺諸部族連盟の狩人長の一人」 関係性の中心には サトー、ニャル子、ヴェルグラン がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "regius",
+      "name": "レギウス",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "レギウス の縦長キャラクターポートレート。 役割は 禁書を持ち込む研究者。 外見の手掛かり: 禁書と知識を携えて現れる。 レギウスは最後にしろたまへ目を向ける。 話し方の印象: 「……レギウス」 関係性の中心には サトー、ユルナ がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "velgrang",
+      "name": "ヴェルグラン",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "ヴェルグラン の縦長キャラクターポートレート。 役割は 白角の境主 / 樹海の深層を象徴する存在。 外見の手掛かり: 白角と圧倒的な気配を持つ樹海の主。 ヴェルグランの顔は、はっきりと獣のそれではなかった。 話し方の印象: 「白角の境主《ヴェルグラン》」 関係性の中心には サトー、ニャル子、しろたま がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    },
+    {
+      "id": "village-chief",
+      "name": "村長",
+      "model": "gemini-3.1-flash-image-preview",
+      "prompt": "村長 の縦長キャラクターポートレート。 役割は ミルフィ村の村長。 外見の手掛かり: 村の現実と情を背負ってサトーを送り出す。 扉を開けると、村長は困ったような、それでいてどこか申し訳なさそうな顔で出迎えた。 話し方の印象: 「村長」 関係性の中心には サトー、セレスティア がいる。 生活感と物語の温度を優先し、過剰に戦闘的な構図にしない。",
+      "negativePrompt": "avoid costume drift and avoid changing signature physical cues",
+      "referenceImage": "草稿/village-chief.png",
+      "sourceRefs": [
+        "草稿/初稿.md",
+        "project/02_characters.md"
+      ]
+    }
+  ]
+}

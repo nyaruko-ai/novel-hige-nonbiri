@@ -1,0 +1,20 @@
+{
+  "spec": {
+    "globalPrompt": "Create a premium vertical watercolor cover illustration for a Japanese mobile web novel. Keep the mood calm, inviting, literary, and softly magical. Do not render any visible text, typography, title lettering, logo, watermark, signage, or symbols that read like writing inside the image.",
+    "globalNegativePrompt": "text, typography, letters, title lettering, logo, watermark, busy collage, split panels, hard comic style, spoiler imagery, battle poster composition",
+    "fixedWidth": 1440,
+    "fixedHeight": 2304
+  },
+  "titleImage": {
+    "id": "title-cover",
+    "model": "gemini-3.1-flash-image-preview",
+    "outputDir": "project/assets/title",
+    "referenceImages": [
+      "project/assets/characters/sato.png",
+      "project/assets/characters/nyaruko.png",
+      "project/assets/characters/shirotama.png"
+    ],
+    "prompt": "おっさんサトー、ヒゲ魔法で開拓 〜異世界転生したので猫耳ともふもふに囲まれてのんびり暮らしたい〜 の世界観を象徴する縦長の装画。ネタバレは避け、物語全体の空気だけを伝える。朝靄の残る樹海のひだまり盆地、木造の小さな家や工房、畑や水路、湯気の立つ穏やかな暮らしを主題にする。人物を入れる場合はサトー、ニャル子、しろたまを小さめに自然に配置し、生活の気配として溶け込ませる。三人の共同生活のぬくもり、開拓が始まったばかりの静かな希望、異世界スローライフのやさしい神秘を感じさせる。後半の敵対、災厄、政治対立、正体の暴露、決戦を示す要素は入れない。",
+    "negativePrompt": "avoid action-heavy battle poster composition, avoid late-story revelations, avoid villain focus, avoid giant monsters, and avoid any visible text inside the illustration"
+  }
+}

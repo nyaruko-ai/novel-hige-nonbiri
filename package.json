@@ -1,0 +1,19 @@
+{
+  "name": "novel-template",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "import:draft": "node scripts/import-draft-manuscript.mjs 草稿/初稿.md --title=おっさんサトー、樹海でのんびり開拓生活",
+    "extract:characters": "node scripts/extract-characters-from-draft.mjs",
+    "build:chapter-summaries": "node scripts/build-chapter-summaries.mjs",
+    "generate:characters": "node scripts/generate-character-portrait.mjs --all",
+    "generate:chapter-covers": "node scripts/generate-chapter-cover.mjs --all",
+    "generate:ui-textures": "node scripts/generate-ui-textures.mjs",
+    "check:project": "node scripts/check-project-state.mjs",
+    "build:web": "node scripts/build-web-novel.mjs",
+    "build:from-draft": "npm run import:draft && npm run extract:characters && npm run build:chapter-summaries && npm run generate:ui-textures && npm run generate:characters && npm run generate:chapter-covers && npm run build:web"
+  },
+  "dependencies": {
+    "sharp": "^0.34.0"
+  }
+}

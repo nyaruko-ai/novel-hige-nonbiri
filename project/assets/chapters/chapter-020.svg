@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440" height="1920" viewBox="0 0 1440 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5e9d2" />
+      <stop offset="100%" stop-color="#d5b25b" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="20%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.28" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <filter id="blur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="28" />
+    </filter>
+  </defs>
+  <rect width="1440" height="1920" fill="url(#bg)" />
+  <rect width="1440" height="1920" fill="url(#glow)" />
+  <circle cx="1123.2" cy="422.4" r="172.79999999999998" fill="rgba(255,255,255,0.45)" filter="url(#blur)" />
+  <path d="M0 1382.3999999999999 C 288 1209.6, 604.8 1516.8000000000002, 907.2 1305.6000000000001 S 1296 1056, 1440 1305.6000000000001 L 1440 1920 L 0 1920 Z" fill="#544018" fill-opacity="0.18" />
+  <path d="M0 1536 C 259.2 1344, 662.4 1728, 1007.9999999999999 1459.2 S 1267.2 1228.8, 1440 1497.6000000000001 L 1440 1920 L 0 1920 Z" fill="#544018" fill-opacity="0.3" />
+  <g opacity="0.18">
+    <path d="M144 384 Q 604.8 192, 1123.2 537.6" stroke="#544018" stroke-width="3" fill="none" />
+    <path d="M201.60000000000002 518.4000000000001 Q 691.1999999999999 326.40000000000003, 1180.8 652.8000000000001" stroke="#544018" stroke-width="2" fill="none" />
+  </g>
+  <rect x="115.2" y="153.6" width="1209.6" height="1612.8" rx="42" fill="none" stroke="#ffffff" stroke-opacity="0.28" />
+  <g transform="translate(172.79999999999998 230.39999999999998)">
+    <text x="0" y="0" fill="#ffffff" fill-opacity="0.88" font-size="46" font-family="'Avenir Next','Hiragino Sans','Yu Gothic',sans-serif" letter-spacing="6">第二十章</text>
+    <text x="0" y="110" fill="#ffffff" fill-opacity="0.96" font-size="94" font-family="'Yu Mincho','Hiragino Mincho ProN',serif" letter-spacing="4">四勢力共闘と、鎮静準備</text>
+  </g>
+</svg>

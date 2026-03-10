@@ -1,0 +1,411 @@
+{
+  "spec": {
+    "globalPrompt": "Create a premium vertical watercolor chapter-frontispiece for a Japanese mobile web novel. Use layered washes, restrained linework, atmospheric perspective, paper grain, and an artful literary mood. Favor elegant scenic composition over poster-like action. Do not render any visible text, typography, letters, captions, signage, title cards, or symbols that read like writing inside the image.",
+    "globalNegativePrompt": "text, typography, letters, words, caption, title card, signage, logo, watermark, UI labels, split panels, collage, crowded action montage, deformed anatomy, photorealistic rendering, hard cel shading",
+    "fixedWidth": 1440,
+    "fixedHeight": 1920,
+    "outputDir": "project/assets/chapters",
+    "defaultModel": "gemini-3.1-flash-image-preview"
+  },
+  "chapters": [
+    {
+      "id": "chapter-001",
+      "chapterLabel": "第一章",
+      "chapterTitle": "第一章　静かじゃなくなったミルフィ村と、樹海への引っ越し",
+      "mood": "sunrise",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "nyaruko",
+        "shirotama",
+        "celestia"
+      ],
+      "referenceImages": [
+        "project/assets/characters/nyaruko.png",
+        "project/assets/characters/shirotama.png",
+        "project/assets/characters/celestia.png"
+      ],
+      "prompt": "静かじゃなくなったミルフィ村と、樹海への引っ越し を象徴する章扉絵。静かじゃなくなったミルフィ村と、樹海への引っ越し。見どころは 役人と学者で家の前が渋滞、ほどほどのんびりが難しい、セレスティアのお願いと村長の本音。ミルフィ村の朝は早い。それは少し寂しくて、でも確かにわくわくする旅立ちだった。 印象的な要素は 役人と学者で家の前が渋滞、ほどほどのんびりが難しい、セレスティアのお願いと村長の本音、ニャル子、引っ越し計画を立てる。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-002",
+      "chapterLabel": "第二章",
+      "chapterTitle": "第二章　ベルノア樹海入りと、ひだまり盆地発見",
+      "mood": "grove",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "shirotama",
+        "perick",
+        "sato"
+      ],
+      "referenceImages": [
+        "project/assets/characters/shirotama.png",
+        "project/assets/characters/perick.png",
+        "project/assets/characters/sato.png"
+      ],
+      "prompt": "ベルノア樹海入りと、ひだまり盆地発見 を象徴する章扉絵。ベルノア樹海入りと、ひだまり盆地発見。見どころは 樹海の入口は地図より遠い、ペリック、最初から怪しい、しろたま、ひだまり盆地を見つける。ミルフィ村を離れて三日目の昼すぎ、街道の土の色が変わった。ベルノア樹海のひだまり盆地に、三人の新しい暮らしが始まった。 印象的な要素は 樹海の入口は地図より遠い、ペリック、最初から怪しい、しろたま、ひだまり盆地を見つける、一夜目の野営と鈴の結界。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-003",
+      "chapterLabel": "第三章",
+      "chapterTitle": "第三章　仮住まいと、はじめての伐採",
+      "mood": "mist",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "nyaruko",
+        "sato",
+        "shirotama"
+      ],
+      "referenceImages": [
+        "project/assets/characters/nyaruko.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/shirotama.png"
+      ],
+      "prompt": "仮住まいと、はじめての伐採 を象徴する章扉絵。仮住まいと、はじめての伐採。見どころは ――《ヒゲ伐採》、雨風だけは防ぎたい、ベッドより先に屋根。「まずは木ですにゃ」。樹海での最初の晩ごはんは、そんな未来の話をしながら、静かに終わっていった。 印象的な要素は ――《ヒゲ伐採》、雨風だけは防ぎたい、ベッドより先に屋根、ニャル子の台所は強い。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-004",
+      "chapterLabel": "第四章",
+      "chapterTitle": "第四章　水路と畑と、風呂ができるまで",
+      "mood": "river",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "shirotama",
+        "sato",
+        "nyaruko"
+      ],
+      "referenceImages": [
+        "project/assets/characters/shirotama.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png"
+      ],
+      "prompt": "水路と畑と、風呂ができるまで を象徴する章扉絵。水路と畑と、風呂ができるまで。見どころは 井戸か、湧き水か、しろたまは地下を知っている、――《ヒゲ灌漑》。仮住まいがひとまず整った翌朝、サトーは腕を組んで水場を見ていた。ひだまり盆地は、ただ住みやすいだけの場所ではなさそうだった。 印象的な要素は 井戸か、湧き水か、しろたまは地下を知っている、――《ヒゲ灌漑》、風呂は文明。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-005",
+      "chapterLabel": "第五章",
+      "chapterTitle": "第五章　樹海探索と、埋もれた水路跡",
+      "mood": "ember",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "sato",
+        "nyaruko",
+        "shirotama"
+      ],
+      "referenceImages": [
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png",
+        "project/assets/characters/shirotama.png"
+      ],
+      "prompt": "樹海探索と、埋もれた水路跡 を象徴する章扉絵。樹海探索と、埋もれた水路跡。見どころは 昨日までなかった石組み、樹海の古い水路跡、獣道をふさぐな。翌朝、サトーは真っ先に畑の脇へ向かった。ベルノア樹海での暮らしは、家と水と畑だけでは終わらない。 印象的な要素は 昨日までなかった石組み、樹海の古い水路跡、獣道をふさぐな、白い角の噂。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-006",
+      "chapterLabel": "第六章",
+      "chapterTitle": "第六章　工房開きと、元補給官バルド編",
+      "mood": "harvest",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "baldo",
+        "sato",
+        "nyaruko"
+      ],
+      "referenceImages": [
+        "project/assets/characters/baldo.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png"
+      ],
+      "prompt": "工房開きと、元補給官バルド編 を象徴する章扉絵。工房開きと、元補給官バルド編。見どころは 倒れていた男は補給官、バルド、斧より帳面が得意、工房小屋が立ち上がる。ひだまり盆地での暮らしが、ようやく「朝起きて、やることが決まっている」形になってきた頃だった。そしてその根元には、まだ自分たちの知らない昔の水路が眠っている。 印象的な要素は 倒れていた男は補給官、バルド、斧より帳面が得意、工房小屋が立ち上がる、――《ヒゲ製材》。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-007",
+      "chapterLabel": "第七章",
+      "chapterTitle": "第七章　薬草園と、治療師ミレナ編",
+      "mood": "night",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "milena",
+        "sato",
+        "nyaruko"
+      ],
+      "referenceImages": [
+        "project/assets/characters/milena.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png"
+      ],
+      "prompt": "薬草園と、治療師ミレナ編 を象徴する章扉絵。薬草園と、治療師ミレナ編。見どころは 治療師ミレナの値踏み、畑は土から、薬草園と干し棚。治療師が必要だと言い出したのはバルドだったが、連れてきたのはペリックだった。それは、ひだまり盆地にとって十分すぎる言葉だった。 印象的な要素は 治療師ミレナの値踏み、畑は土から、薬草園と干し棚、保存食は冬より先に作る。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-008",
+      "chapterLabel": "第八章",
+      "chapterTitle": "第八章　行商ペリックと、最初の交換市編",
+      "mood": "sunrise",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "perick",
+        "sato",
+        "nyaruko"
+      ],
+      "referenceImages": [
+        "project/assets/characters/perick.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png"
+      ],
+      "prompt": "行商ペリックと、最初の交換市編 を象徴する章扉絵。行商ペリックと、最初の交換市編。見どころは ペリックの荷車はうるさい、塩と釘と怪しい掘り出し物、はじめての交換市。ペリックの荷車は、来る前からわかる。樹海の中の小さな盆地に、笑い声が増える。 印象的な要素は ペリックの荷車はうるさい、塩と釘と怪しい掘り出し物、はじめての交換市、小悪党は道を知っている。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-009",
+      "chapterLabel": "第九章",
+      "chapterTitle": "第九章　帝国工兵ハイルと、樹海の橋編",
+      "mood": "grove",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "sato",
+        "heil",
+        "nyaruko"
+      ],
+      "referenceImages": [
+        "project/assets/characters/sato.png",
+        "project/assets/characters/heil.png",
+        "project/assets/characters/nyaruko.png"
+      ],
+      "prompt": "帝国工兵ハイルと、樹海の橋編 を象徴する章扉絵。帝国工兵ハイルと、樹海の橋編。見どころは 帝国工兵ハイル来訪、橋をかけたい男と、かけたくないサトー、――《ヒゲ橋架け》。その日、ひだまり盆地へ入ってきた連中は、最初から空気が違った。そしてサトーは思う。 印象的な要素は 帝国工兵ハイル来訪、橋をかけたい男と、かけたくないサトー、――《ヒゲ橋架け》、排水路は戦うより強い。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-010",
+      "chapterLabel": "第十章",
+      "chapterTitle": "第十章　森辺の狩人ユルナと、樹海の掟編",
+      "mood": "mist",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "shirotama",
+        "yurna",
+        "sato"
+      ],
+      "referenceImages": [
+        "project/assets/characters/shirotama.png",
+        "project/assets/characters/yurna.png",
+        "project/assets/characters/sato.png"
+      ],
+      "prompt": "森辺の狩人ユルナと、樹海の掟編 を象徴する章扉絵。森辺の狩人ユルナと、樹海の掟編。見どころは ユルナは樹海の境を知る、切っていい木、いけない木、しろたま、禁足に立ち止まる。ユルナが現れたとき、誰一人その接近に気づかなかった。その予感だけが、夕暮れの空気へ静かに残った。 印象的な要素は ユルナは樹海の境を知る、切っていい木、いけない木、しろたま、禁足に立ち止まる、鈴が鳴らない場所。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-011",
+      "chapterLabel": "第十一章",
+      "chapterTitle": "第十一章　冒険者ギルド出張所と、育成依頼",
+      "mood": "river",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "baldo",
+        "sato",
+        "nyaruko"
+      ],
+      "referenceImages": [
+        "project/assets/characters/baldo.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png"
+      ],
+      "prompt": "冒険者ギルド出張所と、育成依頼 を象徴する章扉絵。冒険者ギルド出張所と、育成依頼。見どころは ギルド掲示板、設置、害獣追い払い依頼、新人冒険者と実地訓練。交換市が三度目を迎えたころ、ひだまり盆地へ一人の若い男がやってきた。ここを出て、戻って、また来たいと思う者がいる。 印象的な要素は ギルド掲示板、設置、害獣追い払い依頼、新人冒険者と実地訓練、バルド教官は厳しい。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-012",
+      "chapterLabel": "第十二章",
+      "chapterTitle": "第十二章　人が増える盆地と、小さな村のかたち",
+      "mood": "ember",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "sato",
+        "nyaruko",
+        "shirotama"
+      ],
+      "referenceImages": [
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png",
+        "project/assets/characters/shirotama.png"
+      ],
+      "prompt": "人が増える盆地と、小さな村のかたち を象徴する章扉絵。人が増える盆地と、小さな村のかたち。見どころは 住人名簿が足りない、共同浴場と洗濯場、水車小屋、回る。「足りませんにゃ」。朝日が盆地へ差し込み、水路が光る。 印象的な要素は 住人名簿が足りない、共同浴場と洗濯場、水車小屋、回る、夜番の鐘と見張り塔。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-013",
+      "chapterLabel": "第十三章",
+      "chapterTitle": "第十三章　王国・帝国・連合国と、揺れる利害",
+      "mood": "harvest",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "nyaruko",
+        "sato",
+        "shirotama"
+      ],
+      "referenceImages": [
+        "project/assets/characters/nyaruko.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/shirotama.png"
+      ],
+      "prompt": "王国・帝国・連合国と、揺れる利害 を象徴する章扉絵。王国・帝国・連合国と、揺れる利害。見どころは 王国は保護したい、帝国は道を通したい、連合国は市を開きたい。王国の使者がやって来たのは、共同浴場の湯気がよく上がるようになった頃だった。ひだまり村は、ただ広がるだけではなく、ちゃんと“境目を持つ”方向へ進み始めていた。 印象的な要素は 王国は保護したい、帝国は道を通したい、連合国は市を開きたい、みんな正しいと面倒くさい。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-014",
+      "chapterLabel": "第十四章",
+      "chapterTitle": "第十四章　自治規約と、旗なき中立地",
+      "mood": "night",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "perick",
+        "village-chief",
+        "sato"
+      ],
+      "referenceImages": [
+        "project/assets/characters/perick.png",
+        "project/assets/characters/village-chief.png",
+        "project/assets/characters/sato.png"
+      ],
+      "prompt": "自治規約と、旗なき中立地 を象徴する章扉絵。自治規約と、旗なき中立地。見どころは 旗を立てないという旗、ひだまり規約、避難民を受け入れる日。「結局、立場を決めるしかないんだな」。その違いだけは、はっきりしていた。 印象的な要素は 旗を立てないという旗、ひだまり規約、避難民を受け入れる日、ペリック、境界石を売る。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-015",
+      "chapterLabel": "第十五章",
+      "chapterTitle": "第十五章　消える道と、白い角の前兆",
+      "mood": "sunrise",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "shirotama",
+        "sato",
+        "nyaruko"
+      ],
+      "referenceImages": [
+        "project/assets/characters/shirotama.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png"
+      ],
+      "prompt": "消える道と、白い角の前兆 を象徴する章扉絵。消える道と、白い角の前兆。見どころは 道が朝に消えていた、川筋が夜に変わる、獣たちの大移動。異変は、最初はあまりにも地味だった。その事実が、ひだまり村の空気を一気に変えた。 印象的な要素は 道が朝に消えていた、川筋が夜に変わる、獣たちの大移動、しろたまの「――まだ、おきない」。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-016",
+      "chapterLabel": "第十六章",
+      "chapterTitle": "第十六章　ヴェルグラン伝承と、樹海の深層",
+      "mood": "grove",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "yurna",
+        "regius",
+        "velgrang"
+      ],
+      "referenceImages": [
+        "project/assets/characters/yurna.png",
+        "project/assets/characters/regius.png",
+        "project/assets/characters/velgrang.png"
+      ],
+      "prompt": "ヴェルグラン伝承と、樹海の深層 を象徴する章扉絵。ヴェルグラン伝承と、樹海の深層。見どころは ユルナの古い語り、ヴェルグランという名、争いの総量。白い角を見た翌日の夜、ユルナは珍しく、自分から焚き火の前へ座った。猶予は、残っている。 印象的な要素は ユルナの古い語り、ヴェルグランという名、争いの総量、レギウス、禁書を持ってくる。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-017",
+      "chapterLabel": "第十七章",
+      "chapterTitle": "第十七章　密輸団と、境界杭を巡る騒動",
+      "mood": "mist",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "perick",
+        "sato",
+        "nyaruko"
+      ],
+      "referenceImages": [
+        "project/assets/characters/perick.png",
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png"
+      ],
+      "prompt": "密輸団と、境界杭を巡る騒動 を象徴する章扉絵。密輸団と、境界杭を巡る騒動。見どころは 境界杭が三本立った日、密輸団は誰の敵か、ペリック、余計な商談をする。最悪の光景は、妙にあっさり現れた。ひだまり村は、初めて“外の争いの濁り”を真正面から浴びた。 印象的な要素は 境界杭が三本立った日、密輸団は誰の敵か、ペリック、余計な商談をする、小競り合いの火種。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-018",
+      "chapterLabel": "第十八章",
+      "chapterTitle": "第十八章　争いの連鎖と、覚醒前夜",
+      "mood": "river",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "shirotama",
+        "baldo",
+        "milena"
+      ],
+      "referenceImages": [
+        "project/assets/characters/shirotama.png",
+        "project/assets/characters/baldo.png",
+        "project/assets/characters/milena.png"
+      ],
+      "prompt": "争いの連鎖と、覚醒前夜 を象徴する章扉絵。争いの連鎖と、覚醒前夜。見どころは 兵が増えると鳥が消える、ミレナ、子どもたちを集める、バルド、倉庫を埋める。数日後、ひだまり村の周囲は目に見えて息苦しくなった。猶予は終わった。 印象的な要素は 兵が増えると鳥が消える、ミレナ、子どもたちを集める、バルド、倉庫を埋める、ハイル、砦ではなく導流路を選ぶ。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-019",
+      "chapterLabel": "第十九章",
+      "chapterTitle": "第十九章　白角の境主と、樹海厄災編",
+      "mood": "ember",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "sato",
+        "nyaruko",
+        "shirotama"
+      ],
+      "referenceImages": [
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png",
+        "project/assets/characters/shirotama.png"
+      ],
+      "prompt": "白角の境主と、樹海厄災編 を象徴する章扉絵。白角の境主と、樹海厄災編。見どころは 樹海が鳴いた、白角の境主、目を開く、風が道を食う。最初に鳴ったのは、地面だった。だからこそ次は、この暮らしをただ耐えるだけで終わらせない方法を見つけなければならない。 印象的な要素は 樹海が鳴いた、白角の境主、目を開く、風が道を食う、洪水と獣害と地割れ。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-020",
+      "chapterLabel": "第二十章",
+      "chapterTitle": "第二十章　四勢力共闘と、鎮静準備",
+      "mood": "harvest",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "sato",
+        "nyaruko",
+        "shirotama"
+      ],
+      "referenceImages": [
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png",
+        "project/assets/characters/shirotama.png"
+      ],
+      "prompt": "四勢力共闘と、鎮静準備 を象徴する章扉絵。四勢力共闘と、鎮静準備。見どころは 争う理由をいったん置け、王国の盾、帝国の土木、連合国の物流、森辺の歌と鎮めの道。緊急会談は、ひだまり村の食堂で開かれた。そしてサトーは思う。 印象的な要素は 争う理由をいったん置け、王国の盾、帝国の土木、連合国の物流、森辺の歌と鎮めの道、杭を抜け、札を外せ。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    },
+    {
+      "id": "chapter-021",
+      "chapterLabel": "第二十一章",
+      "chapterTitle": "第二十一章　樹海最奥と、三人の答え",
+      "mood": "night",
+      "model": "gemini-3.1-flash-image-preview",
+      "referenceCharacterIds": [
+        "sato",
+        "nyaruko",
+        "shirotama"
+      ],
+      "referenceImages": [
+        "project/assets/characters/sato.png",
+        "project/assets/characters/nyaruko.png",
+        "project/assets/characters/shirotama.png"
+      ],
+      "prompt": "樹海最奥と、三人の答え を象徴する章扉絵。樹海最奥と、三人の答え。見どころは 樹海最奥への行路、しろたまの感応、道になる、ニャル子の鈴、場を揃える。出発は夜明け前だった。ひだまり村の朝は、今日も少しずつ豊かになっていた。 印象的な要素は 樹海最奥への行路、しろたまの感応、道になる、ニャル子の鈴、場を揃える、サトー、――《ヒゲ環座》。人物を入れる場合は 1 から 3 人までに絞り、必要に応じて俯瞰的な風景の中へ小さく配置する。風景や建築や地形が主役の章では、キャラクターを前面に出しすぎず、暮らしの気配として溶け込ませる。",
+      "negativePrompt": "avoid battle-poster composition, overstuffed multi-scene storytelling, and oversized character-only composition when the chapter is place-driven"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1080" height="1920" viewBox="0 0 1080 1920" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e9e3ef" />
+      <stop offset="100%" stop-color="#988bb2" />
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="18%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.32" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1080" height="1920" fill="url(#bg)" />
+  <rect width="1080" height="1920" fill="url(#glow)" />
+  <circle cx="540" cy="806.4" r="280.8" fill="#ffffff" fill-opacity="0.14" />
+  <path d="M302.40000000000003 1459.2 C 367.20000000000005 1075.2, 712.8000000000001 1075.2, 777.6 1459.2 L 777.6 1689.6 L 302.40000000000003 1689.6 Z" fill="#30243f" fill-opacity="0.24" />
+  <circle cx="540" cy="652.8000000000001" r="151.20000000000002" fill="#30243f" fill-opacity="0.2" />
+  <rect x="86.4" y="134.4" width="907.1999999999999" height="1651.2" rx="36" fill="none" stroke="#ffffff" stroke-opacity="0.26" />
+  <text x="108" y="230.39999999999998" fill="#ffffff" fill-opacity="0.82" font-size="49" font-family="'Avenir Next','Hiragino Sans','Yu Gothic',sans-serif" letter-spacing="4">Character Portrait</text>
+  <text x="108" y="1632" fill="#ffffff" fill-opacity="0.96" font-size="92" font-family="'Yu Mincho','Hiragino Mincho ProN',serif">セレスティア</text>
+  <text x="108" y="1708.8" fill="#ffffff" fill-opacity="0.74" font-size="32" font-family="'Hiragino Sans','Yu Gothic',sans-serif">セレスティア の縦長キャラクターポートレート。 役割は 王国側の窓口 / 真面目で現実的な調整役。 外見の手掛かり: 濃紺の外套をまとい、背筋を伸ばした隙のない佇まい。 「セレスティア・ルーンベルク様よりです。なるべく早くお目通り願いたいと</text>
+</svg>
