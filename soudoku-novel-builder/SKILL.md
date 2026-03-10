@@ -14,7 +14,8 @@ description: Use this skill to transform a completed draft manuscript into a str
 3. `node scripts/extract-characters-from-draft.mjs` を実行して、`project/02_characters.md` と `prompts/character-portraits.json` を生成する。
 4. `node scripts/build-chapter-summaries.mjs` を実行して、`project/06_chapter_summaries.md` と `prompts/chapter-cover-images.json` を生成する。
 5. `node scripts/generate-ui-textures.mjs` を実行して、読書背景用の UI 素材を作る。
-6. ここまでで一度、抽出された章構造、キャラクター設定、章あらすじをユーザ確認へ出す。
+6. 必要なら `prompts/title-image.json` を整え、`node scripts/generate-title-image.mjs` でタイトル画像を作る。
+7. ここまでで一度、抽出された章構造、キャラクター設定、画像方向性をユーザ確認へ出す。
 
 ## Composition Model
 
@@ -44,9 +45,14 @@ description: Use this skill to transform a completed draft manuscript into a str
 - 正本は `project/` 配下。抽出結果や整形結果はここに置く。
 - 章・話の順序は原稿からそのまま引き継ぐ。
 - 画像は `キャラクター画像` と `章扉絵` に絞る。
+- タイトル画像を使う場合は、物語全体の空気を伝える装画として扱い、ネタバレを避ける。
 - Web UI は `章 > 話` ベースで構築し、話ごとの画像差し込みは行わない。
 - 背景は静かな SVG / CSS 表現を使い、本文の可読性を最優先する。
 - 画像生成 API が使えない場合でも、ローカル生成フォールバックで成果物を欠かさない。
+- 画像内に文字を入れない。キャラクター画像、章扉絵、タイトル画像のすべてで、題字、看板、ロゴ、キャプション、透かし、記号化された文字を禁止する。
+- 章扉絵はポスター構図よりも風景主体を優先し、人物を入れる場合も 1 から 3 人まで、小さめで自然に配置する。
+- 章扉絵は必要に応じてキャラクター参照画像を使い、服装、髪色、種族特徴、シルエットを維持する。
+- キャラクター抽出結果は自動生成の初稿として扱い、ユーザ指定の見た目や参照画像があれば、それを優先して手動補正する。
 
 ## Standard Loop
 
@@ -66,24 +72,34 @@ description: Use this skill to transform a completed draft manuscript into a str
 
 - キャラクター画像定義は `prompts/character-portraits.json`
 - 章扉絵定義は `prompts/chapter-cover-images.json`
+- タイトル画像定義は `prompts/title-image.json`
 - UI 背景素材は `project/assets/ui/`
+- prompt には必ず「文字禁止」と「避けたい構図」を入れる
+- 章扉絵では `referenceCharacterIds` / `referenceImages` を必要に応じて設定する
+- キャラクター画像で参照画像がある場合は `referenceImage` を使う
 
 ### 4. 画像生成
 
 - `node scripts/generate-character-portrait.mjs --all`
 - `node scripts/generate-chapter-cover.mjs --all`
+- 必要なら `node scripts/generate-title-image.mjs`
 - API が使えない場合はローカルフォールバック生成を使う
+- 画像生成後は、意図と違うキャラクターだけ個別再生成してよい
+- `raw` 画像があり最終画像だけ欠けた場合は、`raw` から仕上げ画像を復元してよい
 
 ### 5. Web ビルド
 
 - `node scripts/build-web-novel.mjs`
 - 出力は `docs/`
-- 表示構成は `タイトル -> 章扉絵 -> 章あらすじ -> 各話本文`
+- 表示構成は `タイトル -> 章扉絵 -> 各話本文`
+- `章 Synopsis` や `話要約` は表示しない
+- 章扉絵は画像全体が見切れない表示を優先する
 
 ### 6. 整合性確認
 
 - `node scripts/check-project-state.mjs`
-- 章数、話数、キャラクター抽出、章あらすじ、扉絵、UI 素材、Web ビルドを確認する
+- 章数、話数、キャラクター抽出、章あらすじ、タイトル画像、扉絵、UI 素材、Web ビルドを確認する
+- 必要なら `docs/` の実表示を見て、タイトル縦組みや画像見切れも確認する
 
 ## Commands
 
@@ -92,6 +108,7 @@ description: Use this skill to transform a completed draft manuscript into a str
 - 章あらすじ生成: `node scripts/build-chapter-summaries.mjs`
 - キャラクター画像生成: `node scripts/generate-character-portrait.mjs <character-id|--all> [reference-image-path] [--parallel=2]`
 - 章扉絵生成: `node scripts/generate-chapter-cover.mjs <chapter-id|--all> [--parallel=2]`
+- タイトル画像生成: `node scripts/generate-title-image.mjs`
 - UI 背景素材生成: `node scripts/generate-ui-textures.mjs`
 - Web ビルド: `node scripts/build-web-novel.mjs`
 - 状態確認: `node scripts/check-project-state.mjs`

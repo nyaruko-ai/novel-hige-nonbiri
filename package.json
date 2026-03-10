@@ -3,9 +3,12 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "init:project": "node scripts/init-novel-project.mjs",
+    "reset:project": "node scripts/reset-novel-project.mjs",
     "import:draft": "node scripts/import-draft-manuscript.mjs 草稿/初稿.md --title=おっさんサトー、樹海でのんびり開拓生活",
     "extract:characters": "node scripts/extract-characters-from-draft.mjs",
     "build:chapter-summaries": "node scripts/build-chapter-summaries.mjs",
+    "generate:title": "node scripts/generate-title-image.mjs",
     "generate:characters": "node scripts/generate-character-portrait.mjs --all",
     "generate:chapter-covers": "node scripts/generate-chapter-cover.mjs --all",
     "generate:ui-textures": "node scripts/generate-ui-textures.mjs",
