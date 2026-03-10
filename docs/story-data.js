@@ -6,7 +6,7 @@ window.STORY_DATA = {
   "genre": "異世界開拓スローライフ",
   "slug": "novel-project",
   "status": "imported-from-complete-draft",
-  "generatedAt": "2026-03-10T03:56:13.874Z",
+  "generatedAt": "2026-03-10T11:56:10.400Z",
   "chapterCount": 21,
   "talkCount": 112,
   "titleDisplayLines": [

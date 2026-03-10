@@ -5,13 +5,48 @@ const menuToggle = document.getElementById("menuToggle");
 const menuBackdrop = document.getElementById("menuBackdrop");
 const chapterMenu = document.getElementById("chapterMenu");
 const chapterMenuList = document.getElementById("chapterMenuList");
+const deviceShell = document.querySelector(".device-shell");
 
 const story = window.STORY_DATA;
+const storagePrefix = `reader:${story.slug || "web-novel"}`;
 
 let chapterAnchors = [];
+let talkAnchors = [];
 let chapterLinkElements = [];
 let currentChapterId = null;
+let currentTalkId = null;
 let ticking = false;
+let restoreQueued = false;
+let persistTimer = null;
+let bookmarks = readStoredJson(`${storagePrefix}:bookmarks`, []);
+
+const bookmarkButton = document.createElement("button");
+bookmarkButton.className = "bookmark-toggle";
+bookmarkButton.type = "button";
+bookmarkButton.setAttribute("aria-label", "現在位置に栞を挟む");
+bookmarkButton.innerHTML = `
+  <svg class="bookmark-toggle-icon" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M7 3.75h10a1.25 1.25 0 0 1 1.25 1.25v15.6a.4.4 0 0 1-.66.31L12 16.1l-5.59 4.81a.4.4 0 0 1-.66-.31V5A1.25 1.25 0 0 1 7 3.75Z" />
+  </svg>
+`;
+deviceShell?.append(bookmarkButton);
+
+function readStoredJson(key, fallback) {
+  try {
+    const stored = window.localStorage.getItem(key);
+    return stored ? JSON.parse(stored) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+function writeStoredJson(key, value) {
+  try {
+    window.localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Ignore localStorage failures so the reader still works in private mode.
+  }
+}
 
 function paragraphElement(text) {
   const paragraph = document.createElement("p");
@@ -217,6 +252,16 @@ function cacheLayout() {
     mood: element.dataset.mood || "sunrise",
     top: element.offsetTop,
   }));
+  talkAnchors = [...document.querySelectorAll(".talk-card")].map((element) => {
+    const chapterSection = element.closest(".chapter-section");
+    return {
+      id: element.id,
+      chapterId: chapterSection?.dataset.chapterId || "",
+      top: element.offsetTop,
+      title: element.querySelector(".talk-title")?.textContent || "",
+      label: element.querySelector(".talk-label")?.textContent || "",
+    };
+  });
 }
 
 function updateActiveChapter() {
@@ -244,11 +289,30 @@ function updateActiveChapter() {
   });
 }
 
+function updateActiveTalk() {
+  if (talkAnchors.length === 0) {
+    return;
+  }
+
+  const anchorLine = deviceScroll.scrollTop + deviceScroll.clientHeight * 0.22;
+  let active = talkAnchors[0];
+
+  talkAnchors.forEach((entry) => {
+    if (entry.top <= anchorLine) {
+      active = entry;
+    }
+  });
+
+  currentTalkId = active?.id || null;
+  syncBookmarkButtonState();
+}
+
 function updateProgress() {
   const maxScroll = deviceScroll.scrollHeight - deviceScroll.clientHeight;
   const ratio = maxScroll <= 0 ? 0 : deviceScroll.scrollTop / maxScroll;
   progressBar.style.transform = `scaleX(${Math.max(0, Math.min(1, ratio))})`;
   updateActiveChapter();
+  updateActiveTalk();
 }
 
 function onScroll() {
@@ -259,8 +323,142 @@ function onScroll() {
   ticking = true;
   window.requestAnimationFrame(() => {
     updateProgress();
+    schedulePersistLastRead();
     ticking = false;
   });
+}
+
+function currentReadingPosition() {
+  const activeTalk =
+    talkAnchors.find((entry) => entry.id === currentTalkId) ||
+    talkAnchors.find((entry) => entry.chapterId === currentChapterId) ||
+    null;
+
+  return {
+    chapterId: currentChapterId,
+    talkId: activeTalk?.id || null,
+    label: activeTalk ? `${activeTalk.label} ${activeTalk.title}`.trim() : currentChapterId || "",
+    scrollTop: deviceScroll.scrollTop,
+    savedAt: new Date().toISOString(),
+  };
+}
+
+function schedulePersistLastRead() {
+  window.clearTimeout(persistTimer);
+  persistTimer = window.setTimeout(() => {
+    writeStoredJson(`${storagePrefix}:last-read`, currentReadingPosition());
+  }, 160);
+}
+
+function jumpToReadingTarget(position, smooth = true) {
+  if (!position) {
+    return;
+  }
+
+  const target =
+    (position.talkId && document.getElementById(position.talkId)) ||
+    (position.chapterId && document.getElementById(position.chapterId));
+
+  if (target) {
+    deviceScroll.scrollTo({
+      top: Math.max(0, target.offsetTop - 12),
+      behavior: smooth ? "smooth" : "auto",
+    });
+    return;
+  }
+
+  if (Number.isFinite(position.scrollTop)) {
+    deviceScroll.scrollTo({
+      top: Math.max(0, position.scrollTop),
+      behavior: smooth ? "smooth" : "auto",
+    });
+  }
+}
+
+function restoreLastRead() {
+  if (restoreQueued) {
+    return;
+  }
+
+  const saved = readStoredJson(`${storagePrefix}:last-read`, null);
+  if (!saved) {
+    return;
+  }
+
+  restoreQueued = true;
+  window.requestAnimationFrame(() => {
+    jumpToReadingTarget(saved, false);
+    updateProgress();
+    restoreQueued = false;
+  });
+}
+
+function bookmarkKey(position) {
+  return position.talkId || position.chapterId || "";
+}
+
+function syncBookmarkButtonState() {
+  const key = bookmarkKey(currentReadingPosition());
+  const isBookmarked = bookmarks.some((entry) => bookmarkKey(entry) === key);
+  bookmarkButton.classList.toggle("is-active", isBookmarked);
+  bookmarkButton.setAttribute("aria-label", isBookmarked ? "現在位置の栞を外す" : "現在位置に栞を挟む");
+}
+
+function renderBookmarkSection() {
+  const section = document.createElement("section");
+  section.className = "bookmark-section";
+
+  const heading = document.createElement("p");
+  heading.className = "bookmark-section-title";
+  heading.textContent = "栞";
+  section.append(heading);
+
+  if (bookmarks.length === 0) {
+    const empty = document.createElement("p");
+    empty.className = "bookmark-empty";
+    empty.textContent = "まだ栞はありません";
+    section.append(empty);
+    return section;
+  }
+
+  const list = document.createElement("div");
+  list.className = "bookmark-list";
+  bookmarks.forEach((entry) => {
+    const button = document.createElement("button");
+    button.className = "bookmark-link";
+    button.type = "button";
+    button.textContent = entry.label || entry.chapterId || "栞";
+    button.addEventListener("click", () => {
+      jumpToReadingTarget(entry, true);
+      setMenuOpen(false);
+    });
+    list.append(button);
+  });
+  section.append(list);
+  return section;
+}
+
+function toggleCurrentBookmark() {
+  const position = currentReadingPosition();
+  const key = bookmarkKey(position);
+  if (!key) {
+    return;
+  }
+
+  const exists = bookmarks.some((entry) => bookmarkKey(entry) === key);
+  bookmarks = exists
+    ? bookmarks.filter((entry) => bookmarkKey(entry) !== key)
+    : [position, ...bookmarks.filter((entry) => bookmarkKey(entry) !== key)].slice(0, 12);
+  writeStoredJson(`${storagePrefix}:bookmarks`, bookmarks);
+  renderMenu();
+  syncBookmarkButtonState();
+}
+
+function renderMenu() {
+  const bookmarkSection = renderBookmarkSection();
+  const menuSections = story.chapters.map((chapter) => chapterMenuGroup(chapter));
+  chapterLinkElements = menuSections.map((entry) => entry.button);
+  chapterMenuList.replaceChildren(bookmarkSection, ...menuSections.map((entry) => entry.section));
 }
 
 function render(storyData) {
@@ -284,13 +482,12 @@ function render(storyData) {
 
   novel.replaceChildren(fragment);
 
-  const menuSections = storyData.chapters.map((chapter) => chapterMenuGroup(chapter));
-  chapterLinkElements = menuSections.map((entry) => entry.button);
-  chapterMenuList.replaceChildren(...menuSections.map((entry) => entry.section));
-
   cacheLayout();
+  renderMenu();
   currentChapterId = null;
+  currentTalkId = null;
   updateProgress();
+  restoreLastRead();
 }
 
 deviceScroll.addEventListener("scroll", onScroll, { passive: true });
@@ -309,6 +506,10 @@ menuToggle.addEventListener("click", () => {
 
 menuBackdrop.addEventListener("click", () => {
   setMenuOpen(false);
+});
+
+bookmarkButton.addEventListener("click", () => {
+  toggleCurrentBookmark();
 });
 
 window.addEventListener("keydown", (event) => {
