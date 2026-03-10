@@ -11,9 +11,9 @@
   --bg-top: #f7efe3;
   --bg-bottom: #caa783;
   --ink: #2a1a10;
-  --paper: rgba(255, 250, 244, 0.9);
-  --paper-strong: rgba(255, 252, 248, 0.96);
-  --paper-border: rgba(102, 71, 43, 0.16);
+  --paper: rgba(245, 236, 224, 0.9);
+  --paper-strong: rgba(242, 232, 218, 0.96);
+  --paper-border: rgba(116, 84, 52, 0.18);
   --shadow: rgba(34, 20, 11, 0.24);
   --hero-shadow: rgba(18, 10, 8, 0.34);
   --accent: #9f6f43;
@@ -147,9 +147,9 @@ body::before {
   overscroll-behavior: contain;
   scrollbar-width: none;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0)),
+    linear-gradient(180deg, rgba(255, 246, 236, 0.18), rgba(245, 230, 213, 0.08)),
     url("./images/ui/reader-texture.svg"),
-    linear-gradient(180deg, rgba(255, 248, 242, 0.2), rgba(255, 248, 242, 0.08));
+    linear-gradient(180deg, rgba(245, 232, 216, 0.28), rgba(244, 231, 215, 0.14));
   background-size: cover, cover, auto;
 }
 
@@ -636,7 +636,9 @@ body.menu-open .chapter-menu {
   position: relative;
   padding: 1rem 1rem 1.18rem;
   border-radius: 1.5rem;
-  background: var(--paper-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 248, 239, 0.62), rgba(231, 212, 188, 0.18)),
+    var(--paper-strong);
   border: 1px solid var(--paper-border);
   box-shadow:
     0 18px 32px -26px var(--shadow),
@@ -688,9 +690,9 @@ body.menu-open .chapter-menu {
   margin: 0;
   font-size: clamp(0.96rem, 4.15vw, 1.08rem);
   line-height: 2.02;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.022em;
   white-space: pre-line;
-  text-wrap: pretty;
+  text-wrap: auto;
   font-feature-settings: "palt" 1;
 }
 
@@ -785,5 +787,21 @@ body.menu-open .chapter-menu {
     width: 100%;
     --device-width: 100%;
     padding-inline: 1rem;
+  }
+}
+
+@media (max-width: 460px) {
+  .novel {
+    padding: 0.72rem 0.46rem calc(env(safe-area-inset-bottom) + 20svh);
+  }
+
+  .talk-card {
+    padding: 0.92rem 0.82rem 1.06rem;
+    border-radius: 1.32rem;
+  }
+
+  .talk-body {
+    gap: 0.92rem;
+    padding-top: 0.88rem;
   }
 }
