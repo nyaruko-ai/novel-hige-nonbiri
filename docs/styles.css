@@ -11,9 +11,9 @@
   --bg-top: #f7efe3;
   --bg-bottom: #caa783;
   --ink: #2a1a10;
-  --paper: rgba(245, 236, 224, 0.9);
-  --paper-strong: rgba(242, 232, 218, 0.96);
-  --paper-border: rgba(116, 84, 52, 0.18);
+  --paper: rgba(255, 250, 244, 0.9);
+  --paper-strong: rgba(255, 252, 248, 0.96);
+  --paper-border: rgba(102, 71, 43, 0.16);
   --shadow: rgba(34, 20, 11, 0.24);
   --hero-shadow: rgba(18, 10, 8, 0.34);
   --accent: #9f6f43;
@@ -147,9 +147,9 @@ body::before {
   overscroll-behavior: contain;
   scrollbar-width: none;
   background:
-    linear-gradient(180deg, rgba(255, 246, 236, 0.18), rgba(245, 230, 213, 0.08)),
+    rgba(255, 255, 255, 0.08),
     url("./images/ui/reader-texture.svg"),
-    linear-gradient(180deg, rgba(245, 232, 216, 0.28), rgba(244, 231, 215, 0.14));
+    rgba(255, 248, 242, 0.2);
   background-size: cover, cover, auto;
 }
 
@@ -599,8 +599,8 @@ body.menu-open .chapter-menu {
 
 .chapter-hero-veil {
   background:
-    linear-gradient(180deg, rgba(13, 10, 8, 0.06), rgba(13, 10, 8, 0.22) 40%, rgba(13, 10, 8, 0.56)),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.02));
+    linear-gradient(180deg, rgba(13, 10, 8, 0.03), rgba(13, 10, 8, 0.14) 40%, rgba(13, 10, 8, 0.32)),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
 }
 
 .chapter-hero-meta {
@@ -636,9 +636,7 @@ body.menu-open .chapter-menu {
   position: relative;
   padding: 1rem 1rem 1.18rem;
   border-radius: 1.5rem;
-  background:
-    linear-gradient(180deg, rgba(255, 248, 239, 0.62), rgba(231, 212, 188, 0.18)),
-    var(--paper-strong);
+  background: var(--paper-strong);
   border: 1px solid var(--paper-border);
   box-shadow:
     0 18px 32px -26px var(--shadow),
@@ -651,8 +649,7 @@ body.menu-open .chapter-menu {
   inset: 0;
   border-radius: inherit;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.22), transparent 26%),
-    radial-gradient(circle at top right, rgba(255, 255, 255, 0.14), transparent 24%);
+    radial-gradient(circle at top right, rgba(255, 255, 255, 0.12), transparent 24%);
   pointer-events: none;
 }
 
