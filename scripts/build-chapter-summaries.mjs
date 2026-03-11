@@ -55,7 +55,7 @@ function detectReferenceCharacters(chapter, characters) {
     .filter((character) => corpus.includes(character.name))
     .map((character) => character.id);
 
-  const defaults = ["sato", "nyaruko", "shirotama"].filter((id) =>
+  const defaults = ["sato", "nia", "shirotama"].filter((id) =>
     characters.some((character) => character.id === id),
   );
 

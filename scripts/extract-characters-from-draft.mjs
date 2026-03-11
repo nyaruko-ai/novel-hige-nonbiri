@@ -80,7 +80,7 @@ const stopwords = new Set([
 
 const knownIds = {
   サトー: "sato",
-  ニャル子: "nyaruko",
+  ニア: "nia",
   しろたま: "shirotama",
   セレスティア: "celestia",
   ペリック: "perick",
@@ -95,7 +95,7 @@ const knownIds = {
 
 const priorityNames = [
   "サトー",
-  "ニャル子",
+  "ニア",
   "しろたま",
   "セレスティア",
   "ペリック",
@@ -114,9 +114,9 @@ const manualProfiles = {
     appearance:
       "四十歳。長い髪を後ろで束ね、立派なヒゲを持つ。戦うより生活の役に立つ形で力を使う。",
     speech: "戦うよりこういう使い方のほうが好きなんだよ、俺は",
-    relations: ["ニャル子", "しろたま", "セレスティア"],
+    relations: ["ニア", "しろたま", "セレスティア"],
   },
-  ニャル子: {
+  ニア: {
     role: "相棒 / 猫耳メイドの生活設計役",
     appearance:
       "銀髪のボブカットで、琥珀色の目を持つ猫耳メイド。黒と白を基調にした上品なメイド服を着て、首元の金の鈴が印象的。感情が耳に出やすく、てきぱきと家事と段取りを回す。",
@@ -128,17 +128,17 @@ const manualProfiles = {
     appearance:
       "猫ではなく、顔と胴体が完全に一体になった白くてまん丸い毛玉のような小さな生き物。小さな耳とつぶらな黒い目と短い尻尾があり、手足は見えない。首輪や服や装飾品は付けず、異世界の遺跡や樹海にもなじむ神秘的な雰囲気を持つ。白いもふもふの体で丸くなって眠ることが多いが、樹海の異変には鋭く反応する。",
     speech: "モフ",
-    relations: ["サトー", "ニャル子"],
+    relations: ["サトー", "ニア"],
   },
   セレスティア: {
     role: "王国側の窓口 / 真面目で現実的な調整役",
     appearance: "濃紺の外套をまとい、背筋を伸ばした隙のない佇まい。",
-    relations: ["サトー", "ニャル子", "村長"],
+    relations: ["サトー", "ニア", "村長"],
   },
   ペリック: {
     role: "行商人 / 軽薄そうで土地勘のあるトリックスター",
     appearance: "荷車と一緒に騒がしく現れ、口が回る。",
-    relations: ["サトー", "ニャル子", "バルド"],
+    relations: ["サトー", "ニア", "バルド"],
   },
   バルド: {
     role: "元補給官 / 工房と物流を整える実務家",
@@ -158,7 +158,7 @@ const manualProfiles = {
   ユルナ: {
     role: "森辺の狩人 / 樹海の掟と古い語りを知る案内役",
     appearance: "樹海の境を知る静かな観察者。",
-    relations: ["サトー", "ニャル子", "ヴェルグラン"],
+    relations: ["サトー", "ニア", "ヴェルグラン"],
   },
   レギウス: {
     role: "禁書を持ち込む研究者",
@@ -168,7 +168,7 @@ const manualProfiles = {
   ヴェルグラン: {
     role: "白角の境主 / 樹海の深層を象徴する存在",
     appearance: "白角と圧倒的な気配を持つ樹海の主。",
-    relations: ["サトー", "ニャル子", "しろたま"],
+    relations: ["サトー", "ニア", "しろたま"],
   },
   村長: {
     role: "ミルフィ村の村長",
@@ -380,7 +380,7 @@ function buildPromptFile(characters) {
       model: "gemini-3.1-flash-image-preview",
       prompt: character.promptSummary,
       negativePrompt:
-        character.id === "nyaruko"
+        character.id === "nia"
           ? "avoid costume drift, do not remove the black-and-white maid outfit, and do not change silver bob hair or amber eyes"
           : character.id === "shirotama"
             ? "do not turn it into a cat, dog, fox, mascot, or realistic quadruped; no collar, no ribbon, no clothes, no accessories; preserve a single perfectly round fluffy body with the face embedded into the sphere, tiny ears, tiny tail, no visible limbs, and simple dark eyes; keep an otherworldly fantasy atmosphere"

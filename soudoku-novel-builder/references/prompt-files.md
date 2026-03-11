@@ -50,11 +50,11 @@
       "model": "gemini-3.1-flash-image-preview",
       "referenceCharacterIds": [
         "sato",
-        "nyaruko"
+        "nia"
       ],
       "referenceImages": [
         "project/assets/characters/sato.png",
-        "project/assets/characters/nyaruko.png"
+        "project/assets/characters/nia.png"
       ],
       "prompt": "chapter-specific direction",
       "negativePrompt": "cover-specific avoidance"
